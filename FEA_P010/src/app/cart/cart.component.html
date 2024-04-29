@@ -1,0 +1,39 @@
+<div class="shop-cart-futuristic">
+  <h1>Carrinho de compras</h1>
+  <div class="products">
+    <div class="item" *ngFor="let item of products">
+      <img [src]="item.imgURL" alt="" />
+      <span>
+        {{ item.name }}
+      </span>
+      <span>
+        Valor:
+        {{ item.price | currency : "BRL" : "symbol" : "1.2-2" }}
+      </span>
+      <button (click)="addItem(item)">Comprar Agora</button>
+    </div>
+  </div>
+  <div class="cart-container">
+    <div class="items">
+      <div class="item" *ngFor="let item of cart()">
+        <img [src]="item.imgURL" alt="" />
+        <span>
+          {{ item.name }}
+        </span>
+        <span>
+          Quantidade:
+          {{ item.quantity }}
+        </span>
+        <span>
+          Valor:
+          {{
+            item.quantity * item.price | currency : "BRL" : "symbol" : "1.2-2"
+          }}
+        </span>
+        <button (click)="removeItem(item.id)">Remover</button>
+      </div>
+    </div>
+    <h2>Total da compra: {{ precoTotal() | currency : "BRL" : "symbol" : "1.2-2" }}</h2>
+  </div>
+  <button class="buy-now">Comprar Agora</button>
+</div>

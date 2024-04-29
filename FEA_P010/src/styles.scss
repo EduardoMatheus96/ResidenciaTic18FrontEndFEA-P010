@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Seletor universal para resetar as margens, padding e caixas de borda para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos comuns para todo o site */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", cursive;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden; /* Impede que o scroll apareça em telas pequenas */
+}
+
+/* Estilos para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 600px) {
+    html {
+        font-size: 14px; /* Aumenta a fonte para telas pequenas */
+    }
+}
+
